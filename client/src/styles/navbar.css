@@ -1,0 +1,90 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1B3C53;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img{
+    height: 60px;
+    margin-right: 8px;
+}
+
+.logo-text{
+    color: #D2C1B6;
+    text-decoration: none;
+    font-size: 1.725rem;
+    font-weight: 600;
+    
+}
+
+.navbar-right .nav-links{
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.navbar-right .nav-links li{
+    margin-right: 1rem;
+}
+
+.navbar-right .nav-links a{
+    color: #D2C1B6;
+    text-decoration: none
+}
+
+.navbar-right .nav-links a:hover{
+    color: #00bfff;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    background-color: #234C6A;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.search-input{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #234C6A;
+    color: #fff;
+    font-style: italic;
+    font-size: 1rem;
+    width: 200px;
+}
+
+.search-input::placeholder{
+    color: #ccc;
+}
+
+.SignIn{
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.SignIn:hover{
+    background-color: #218838;
+}
