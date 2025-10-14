@@ -1,27 +1,18 @@
-import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import '../styles/AnimeCarousel.css';
+import {Anime} from "../types/anime";
 
-type Anime = {
-    id: number,
-    title: string,
-    image: string,
+type Props = {
+  title: string;
+  animeList: Anime[];
 };
 
-function AnimeCarousel(){
-    const [animeList, setAnimeList] = useState<Anime[]>([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/api/popular')
-        .then(res => res.json())
-        .then(data => setAnimeList(data))
-        .catch(err => console.error('Error fetching anime: ', err))
-    }, []);
-
+function AnimeCarousel({title, animeList}: Props){
     return (
-        <div className='carousel-wrapper'>
+        <div className='carousel-section'>
+            <h2>{title}</h2>
             <Swiper 
                 modules={[Autoplay]}
                 parallax={true}
