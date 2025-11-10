@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchPopularAnime = fetchPopularAnime;
 exports.fetchSeasonAnime = fetchSeasonAnime;
 exports.fetchUpcomingAnime = fetchUpcomingAnime;
+exports.fetchAnimeById = fetchAnimeById;
 const axios_1 = __importDefault(require("axios"));
 async function fetchPopularAnime() {
     try {
@@ -59,6 +60,23 @@ async function fetchUpcomingAnime() {
     catch (error) {
         console.error('Error fetching upcoming anime:', error);
         throw error;
+    }
+}
+async function fetchAnimeById(id) {
+    try {
+        const response = await axios_1.default.get(`https://api.jikan.moe/v4/anime/${id}`);
+        const anime = response.data.data;
+        return {
+            id: anime.mal_id,
+            title: anime.title,
+            image: anime.images?.jpg?.large_image_url,
+            synopsis: anime.synopsis,
+            episodes: anime.episodes,
+            score: anime.score,
+            genres: anime.genres.map((g) => g.name),
+        };
+    }
+    catch (err) {
     }
 }
 //# sourceMappingURL=jikanService.js.map

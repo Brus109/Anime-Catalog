@@ -59,3 +59,22 @@ export async function fetchUpcomingAnime(){
         throw error;
     }
 }
+
+export async function fetchAnimeById(id: string){
+    try{
+        const response = await axios.get(`https://api.jikan.moe/v4/anime/${id}`);
+        const anime = response.data.data;
+
+        return {
+            id: anime.mal_id,
+            title: anime.title,
+            image: anime.images?.jpg?.large_image_url,
+            synopsis: anime.synopsis,
+            episodes: anime.episodes,
+            score: anime.score,
+            genres: anime.genres.map((g: any) => g.name),
+        };
+    }catch(err){
+
+    }
+}

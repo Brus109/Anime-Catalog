@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import '../styles/AnimeCarousel.css';
@@ -23,10 +24,13 @@ function AnimeCarousel({title, animeList}: Props){
             >
                 {animeList.map((anime) => (
                     <SwiperSlide key={anime.id}>
-                        <div className='slideCard' data-swiper-parallax="-100" onClick={() => window.location.href = "/"}>
-                            <img src={anime.image} alt={anime.title} />
-                            <h3>{anime.title}</h3>
-                        </div>
+                        <Link to={`/anime/${anime.id}`} className="slideCard" data-swiper-parallax="-100">
+                            <div className="imageWrapper">
+                                <img src={anime.image} alt={anime.title} />
+                                <div className="gradientOverlay"></div>
+                                <h3>{anime.title}</h3>
+                            </div>
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>

@@ -1,1 +1,1 @@
-{"version":3,"file":"jikanService.d.ts","sourceRoot":"","sources":["../../src/services/jikanService.ts"],"names":[],"mappings":"AAEA,wBAAsB,iBAAiB,iBAkBtC;AAED,wBAAsB,gBAAgB,iBAkBrC;AAED,wBAAsB,kBAAkB,iBAkBvC"}
+{"version":3,"file":"jikanService.d.ts","sourceRoot":"","sources":["../../src/services/jikanService.ts"],"names":[],"mappings":"AAEA,wBAAsB,iBAAiB,iBAkBtC;AAED,wBAAsB,gBAAgB,iBAkBrC;AAED,wBAAsB,kBAAkB,iBAkBvC;AAED,wBAAsB,cAAc,CAAC,EAAE,EAAE,MAAM;;;;;;;;eAiB9C"}

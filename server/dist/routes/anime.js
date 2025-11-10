@@ -9,5 +9,6 @@ const router = express_1.default.Router();
 router.get('/popular', animeController_1.getPopularAnime);
 router.get('/season', animeController_1.getSeasonAnime);
 router.get('/upcoming', animeController_1.getUpcomingAnime);
+router.get('/anime/:id', animeController_1.getAnimeById);
 exports.default = router;
 //# sourceMappingURL=anime.js.map

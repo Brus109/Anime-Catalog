@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPopularAnime = getPopularAnime;
 exports.getSeasonAnime = getSeasonAnime;
 exports.getUpcomingAnime = getUpcomingAnime;
+exports.getAnimeById = getAnimeById;
 const jikanService_1 = require("../services/jikanService");
 async function getPopularAnime(req, res) {
     try {
@@ -29,6 +30,19 @@ async function getUpcomingAnime(req, res) {
     }
     catch (error) {
         res.status(500).json({ error: 'Failed to fetch upcoming anime data' });
+    }
+}
+async function getAnimeById(req, res) {
+    const { id } = req.params;
+    if (!id) {
+        return res.status(400).json({ error: 'Anime ID is required' });
+    }
+    try {
+        const anime = await (0, jikanService_1.fetchAnimeById)(id);
+        res.json(anime);
+    }
+    catch (err) {
+        res.status(500).json({ error: 'Failed to fetch anime by id' });
     }
 }
 //# sourceMappingURL=animeController.js.map
